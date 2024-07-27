@@ -4,7 +4,7 @@ using it is pretty straightforward, just click the start button and you're good 
 
 if you're a brainlet who needs guidance;
 - please install python for the love of God. look up 'python' on google and download it
-- just straight up ask me (@cn3z) on Discord i don't really mind lol
+- just straight up ask me (@cn3z) on Discord if you need more help, i don't really mind lol
 - refer to the steps below, it's how to use the program by yourself.
 
 1. enter your current money on the box
