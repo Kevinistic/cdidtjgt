@@ -7,9 +7,6 @@ uhh, idk, just download the .exe file above?
 
 ## Guidance
 if you're a brainlet who needs guidance;
-- please install python for the love of God. look up 'python' on google and download it
-- just straight up ask me (@cn3z) on Discord if you need more help, i don't really mind lol
-- refer to the steps below, it's how to use the program by yourself.
 
 1. enter your current money on the box
 2. press the 'update' button to send the data to the program
