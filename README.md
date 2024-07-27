@@ -14,7 +14,12 @@ if you're a brainlet who needs guidance;
 4. rinse and repeat baby woohoo!
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
+## Plans
+- program icon
+- two languages support (english and bahasa)
+- 'money earned so far' + difference type shit ahhdfghdfsdkdsjfha idk
+
 ## Contribution
-sure ig, let me know in Discord (@cn3z) and we'll discuss it further.
+this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
 
 a better README will be coming soon.
