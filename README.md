@@ -2,6 +2,10 @@
 pretty useless app i created with python and tkinter on my free time. i figured this would be VERY useful for those playing CDID 24/7.
 using it is pretty straightforward, just click the start button and you're good to go.
 
+## Installation
+uhh, idk, just download the .exe file above?
+
+## Guidance
 if you're a brainlet who needs guidance;
 - please install python for the love of God. look up 'python' on google and download it
 - just straight up ask me (@cn3z) on Discord if you need more help, i don't really mind lol
@@ -13,4 +17,7 @@ if you're a brainlet who needs guidance;
 4. rinse and repeat baby woohoo!
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
-a better guide and README will be coming soon.
+## Contribution
+sure ig, let me know in Discord (@cn3z) and we'll discuss it further.
+
+a better README will be coming soon.
