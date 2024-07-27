@@ -15,9 +15,9 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
+- ~~'money earned so far' + difference type shit ahhdfghdfsdkdsjfha idk~~ v1.1
 - program icon
 - two languages support (english and bahasa)
-- 'money earned so far' + difference type shit ahhdfghdfsdkdsjfha idk
 
 ## Contribution
 this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
