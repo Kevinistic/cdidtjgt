@@ -4,11 +4,13 @@
 # alamak
 import tkinter as tk # gui
 import time # importing time from a land faraway
-rate_h = 0.0 # important variables
+rate_h = 0 # important variables
 lasttime = 0
-money1 = 0.0
+money1 = 0
+money3 = 0
 result1 = 0
 result2 = 0
+result3 = 0
 time1 = 0
 time2 = 0
 runtime_seconds = 0
@@ -46,25 +48,29 @@ def show_frame(frame): # switcharoo!
 def switch_and_exit(): # switch to frame3 and deth
     show_frame(frame3)
     root.after(1000, root.destroy) # 1000ms = 1s
-def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION, IT SOMEHOW WORKS AND IDK WHY
+def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION UNLESS YOU KNWO WHAT YOURE DOING!!!!!!!!!!
     global rate_h
     global lasttime
     global money1
+    global money3
     global result1
     global result2
+    global result3
     global time1
     global time2
     global flag1
     entry_string = entry2.get()
     try:
-        money2 = int(entry_string) # m2=10 m1=10 r1=10 r2=10 
+        money2 = int(entry_string) # m2=20 m1=10 m3=10 r1=10 r2=10 r3=10
         if money2 <= 0: raise ValueError # m2 entry, m1 memory, r1 compare, r2 memory-ish?
         result1 = money2-money1
         if is_close(result1, money2):
             money1 = money2 # updating entry to memory
-        if result1 > 0 or is_close(result1, 0): # successful case
+            money3 = money2
+        if money3 <= money2 and result1 > 0: # successful case
+            result3 = money2-money3
             result2 = result1
-            label2_32.config(text=f"{result2:,}")
+            label2_32.config(text=f"{result2:,} (+{(result3):,})")
             if flag1:
                 flag1 = False
                 time3 = time.time()
@@ -80,8 +86,9 @@ def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION, IT SOMEHOW 
                     rate_h = rate_s * 3600
                 else:
                     rate_h = 0
-            label2_42.config(text=f"{rate_h:,.2f}")
+            label2_42.config(text=f"{int(rate_h):,}")
             label2_52.config(text=f"{ms(lasttime)}")
+            money3 = money2
         else:
             label2_32.config(text=f"{result2}")
             invalidentry(entry2)
@@ -104,16 +111,20 @@ def reset():
     global rate_h
     global lasttime
     global money1
+    global money3
     global result1
     global result2
+    global result3
     global time1
     global time2
     global flag1
-    rate_h = 0.0 # important variables
+    rate_h = 0 # important variables
     lasttime = 0
-    money1 = 0.0
-    result1 = 0.0 
-    result2 = 0.0
+    money1 = 0
+    money3 = 0
+    result1 = 0 
+    result2 = 0
+    result3 = 0
     time1 = 0
     time2 = 0
     flag1 = True
