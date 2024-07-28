@@ -3,7 +3,7 @@ pretty useless app i created with python and tkinter on my free time. i figured 
 using it is pretty straightforward, just click the start button and you're good to go.
 
 ## Installation
-uhh, idk, just download the .exe file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.0)?
+uhh, idk, just download the .exe file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.1)?
 
 ## Guidance
 if you're a brainlet who needs guidance;
