@@ -3,6 +3,7 @@
 
 # alamak
 import tkinter as tk # gui
+import os
 import time # importing time from a land faraway
 rate_h = 0 # important variables
 lasttime = 0
@@ -160,6 +161,7 @@ root.title("CDID Truck Job Grind Tracker")
 root.geometry("320x150")  # size in px
 root.resizable(False, False) # nuh uh
 root.attributes("-topmost", True) # always on top
+root.iconbitmap('icon.ico') # calling icon for program
 root.rowconfigure(0, weight=1) # snap to geometry()
 root.columnconfigure(0, weight=1)
 frame1 = tk.Frame(root) # frames for gui
