@@ -15,6 +15,7 @@ time1 = 0
 time2 = 0
 runtime_seconds = 0
 flag1 = True
+lang = True
 def idiot_int(prompt): # idiot proof, for integer
     while True:
         try:
@@ -132,6 +133,26 @@ def reset():
     label2_32.config(text=f"{result2}")
     label2_42.config(text=f"{round(rate_h, 2)}")
     label2_52.config(text=f"{ms(lasttime)}")
+def language():
+    global lang
+    if lang:
+        label2_11.config(text="Masukkan uang anda saat ini")
+        label2_21.config(text="Uang di awal: ")
+        label2_31.config(text="Uang yang didapatkan: ")
+        label2_41.config(text="Uang per jam: ")
+        label2_51.config(text="Waktu sejak terakhir kali update: ")
+        label2_61.config(text="Waktu berjalan program: ")
+        button2_4.config(text="EN")
+        lang = False
+    else:
+        label2_11.config(text="Enter your current money:")
+        label2_21.config(text="Money before start: ")
+        label2_31.config(text="Money earned so far: ")
+        label2_41.config(text="Money per hour: ")
+        label2_51.config(text="Time taken since last update: ")
+        label2_61.config(text="Program runtime: ")
+        button2_4.config(text="ID")
+        lang = True
 
 # main shit
 root = tk.Tk()
@@ -161,8 +182,8 @@ button1.pack()
 # frame 2 content
 labelentry = tk.Frame(frame2)
 labelentry.grid(row=0, column=0, sticky='w')
-label2_1 = tk.Label(labelentry, text="Enter your current money:", justify=tk.LEFT)
-label2_1.grid(row=0, column=0, sticky='w')
+label2_11 = tk.Label(labelentry, text="Enter your current money:", justify=tk.LEFT)
+label2_11.grid(row=0, column=0, sticky='w')
 
 entry2 = tk.Entry(labelentry, justify=tk.LEFT)
 entry2.grid(row=0, column=1, sticky='w')
@@ -196,9 +217,11 @@ button_frame.grid(row=5, column=0, sticky='w')
 button2_1 = tk.Button(button_frame, text="Update", command=process_input)
 button2_2 = tk.Button(button_frame, text="Restart", command=reset)
 button2_3 = tk.Button(button_frame, text="Leave", command=switch_and_exit)
+button2_4 = tk.Button(button_frame, text="ID", command=language)
 button2_1.grid(row=0, column=0, sticky='w')
 button2_2.grid(row=0, column=1, sticky='w')
 button2_3.grid(row=0, column=2, sticky='w')
+button2_4.grid(row=0, column=3, sticky='w')
 
 # frame 3 content
 label3 = tk.Label(frame3, text="thanks.",

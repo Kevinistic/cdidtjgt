@@ -3,7 +3,7 @@ pretty useless app i created with python and tkinter on my free time. i figured 
 using it is pretty straightforward, just click the start button and you're good to go.
 
 ## Installation
-uhh, idk, just download the .exe file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.1)?
+uhh, idk, just download the .exe file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.2)?
 
 ## Guidance
 if you're a brainlet who needs guidance;
@@ -15,9 +15,7 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
-- ~~'money earned so far' + difference type shit ahhdfghdfsdkdsjfha idk~~ v1.1
-- program icon
-- two languages support (english and bahasa)
+- none so far, pls suggest something im out of ideas asfdasgsdasgfdasd
 
 ## Contribution
 this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
