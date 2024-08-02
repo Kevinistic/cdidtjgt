@@ -5,6 +5,7 @@
 import tkinter as tk # gui
 import os
 import time # importing time from a land faraway
+import math
 rate_h = 0 # important variables
 lasttime = 0
 money1 = 0
@@ -33,7 +34,7 @@ def idiot_str(prompt): # idiot proof, for string
             print("enter a string u dumbfuck")
 def ms(n): # float to minutes and seconds
     m = int(n // 60) # minutes
-    s = round(n % 60)
+    s = math.floor(n % 60)
     return f"{m}m {s}s"
 def hms(n): # float to hours, minutes and seconds
     h = int(n // 3600) # hours
