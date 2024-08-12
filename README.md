@@ -19,6 +19,7 @@ if you're a brainlet who needs guidance;
 
 ## Plans
 - money per hour difference
+- better variable naming
 - new library
 
 ## Contribution
