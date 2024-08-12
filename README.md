@@ -18,7 +18,8 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
-- none so far, pls suggest something im out of ideas asfdasgsdasgfdasd
+- money per hour difference
+- new library
 
 ## Contribution
 this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
