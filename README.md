@@ -19,6 +19,7 @@ if you're a brainlet who needs guidance;
 
 ## Plans
 - new gui cuz tkinter is hella outdated man :skull:
+- mac support soon (?)
 
 ## Contribution
 this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
