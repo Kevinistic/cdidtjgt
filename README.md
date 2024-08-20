@@ -3,7 +3,7 @@ pretty useless app i created with python and tkinter on my free time. i figured 
 using it is pretty straightforward, just click the start button and you're good to go.
 
 ## Installation
-1. download the .zip file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.3)
+1. download the .zip file [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.4)
 2. extract it somewhere
 3. voila! you're done. open the .exe program to use.
 otherwise, create a shortcut to the .exe file to your desktop for quick access ig
@@ -18,9 +18,7 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
-- money per hour difference
-- better variable naming
-- new library
+- new gui cuz tkinter is hella outdated man :skull:
 
 ## Contribution
 this is currently a solo project, and it'll stay that way for a long time. unless, you can convince me otherwise. let me know in Discord (@cn3z).
