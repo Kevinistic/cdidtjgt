@@ -18,6 +18,7 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
+- pause feature
 - new gui cuz tkinter is hella outdated man :skull:
 - mac support soon (?)
 
