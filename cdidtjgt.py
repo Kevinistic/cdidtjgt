@@ -5,6 +5,8 @@
 import tkinter as tk # gui
 import time # importing time from a land faraway
 import math
+from tkinter import filedialog
+from PIL import Image, ImageTk
 d = { # important variables in a dictionary named "d" (stfu ik it's bad naming but whatever)
     "rate_hour": 0,
     "rate_hour_recent": 0,
@@ -17,7 +19,12 @@ d = { # important variables in a dictionary named "d" (stfu ik it's bad naming b
     "result_difference": 0,
     "time_beginning": 0,
     "time_recent": 0,
+    "time_pause_start": 0,
+    "time_pause_stop": 0,
+    "time_pause_difference": 0,
+    "time_pause_total": 0,
     "runtime_seconds": 0,
+    "flag_pause": False,
     "flag_time": True,
     "lang": True,
 }
@@ -30,16 +37,16 @@ language_dict = {
         "label2_41": "Money per hour: ",
         "label2_51": "Time taken since last update: ",
         "label2_61": "Program runtime: ",
-        "button2_3": "ID"
+        "button2_4": "ID",
     },
     "ID": {
-        "label2_11": "Masukkan uang anda saat ini",
+        "label2_11": "Masukkan uang anda saat ini:",
         "label2_21": "Uang di awal: ",
         "label2_31": "Uang yang didapatkan: ",
         "label2_41": "Uang per jam: ",
         "label2_51": "Waktu sejak terakhir kali update: ",
-        "label2_61": "Waktu berjalan program: ",
-        "button2_3": "EN"
+        "label2_61": "Waktu program berjalan: ",
+        "button2_4": "EN",
     }
 }
 
@@ -54,6 +61,19 @@ def hms(n): # float to hours, minutes and seconds
     m = int(rs // 60)
     s = round(rs % 60)
     return f"{h}h {m}m {s}s"
+
+def start_pause():
+    global d
+    d["time_pause_start"] = time.time()
+    d["flag_pause"] = True
+    show_frame(frame3)
+
+def stop_pause():
+    global d
+    d["time_pause_stop"] = time.time()
+    d["time_pause_difference"] = d["time_pause_stop"] - d["time_pause_start"]
+    d["time_pause_total"] += d["time_pause_difference"]
+    show_frame(frame2)
 
 def invalidentry(n):
     n.config(bg="red")
@@ -84,9 +104,13 @@ def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION UNLESS YOU K
                 d["time_recent"] = time_input
             else:
                 time_input = time.time()
-                d["time_difference"] = time_input - d["time_recent"]
+                if d["flag_pause"]:
+                    d["time_difference"] = time_input - d["time_recent"] - d["time_pause_difference"]
+                    d["flag_pause"] = False
+                else:
+                    d["time_difference"] = time_input - d["time_recent"]
                 d["time_recent"] = time_input
-                time_delta = time_input - d["time_beginning"]
+                time_delta = time_input - d["time_beginning"] - d["time_pause_total"]
                 if time_delta > 0:
                     rate_second = d["result_memory"] / time_delta
                     d["rate_hour"] = rate_second * 3600
@@ -115,17 +139,16 @@ def runtimef():
     label2_62.config(text=hms(d["runtime_seconds"]))
     root.after(999, runtimef)
 
-def combine1():
-    show_frame(frame2)
+def go():
     runtimef()
+    show_frame(frame2)
 
 def reset():
     global d
     for key in d.keys():
-        if key == "flag_time":
-            d[key] = True
-        else:
-            d[key] = 0
+        if key in ["flag_time", "runtime_seconds", "lang", "flag_pause"]:
+            continue
+        d[key] = 0
     label2_22.config(text=f"{d['money_memory']}")
     label2_32.config(text=f"{d['result_memory']}")
     label2_42.config(text=f"{round(d['rate_hour'], 2)}")
@@ -154,13 +177,13 @@ frame2.grid(row=0, column=0, sticky='nsew')
 frame3.grid(row=0, column=0, sticky='nsew')
 
 # frame 1 content
-label1 = tk.Label(frame1, text="Welcome! This program is created to assist your CDID Truck Job grinding. For any inquiries, contact @cn3z on Discord. Click the button below to start.",
+label1 = tk.Label(frame1, text="""Welcome! This program is created to assist your CDID Truck Job grinding. For any inquiries, contact @cn3z on Discord. Click the button below to start.""",
                   wraplength=320,
                   justify=tk.LEFT
                   )
 label1.pack()
 
-button1 = tk.Button(frame1, text="Here!", command=lambda: combine1())
+button1 = tk.Button(frame1, text="Here!", command=lambda: go())
 button1.pack()
 
 # frame 2 content
@@ -200,10 +223,22 @@ button_frame = tk.Frame(label_frame)
 button_frame.grid(row=5, column=0, sticky='w')
 button2_1 = tk.Button(button_frame, text="Update", command=process_input)
 button2_2 = tk.Button(button_frame, text="Restart", command=reset)
-button2_3 = tk.Button(button_frame, text="ID", command=language)
+button2_3 = tk.Button(button_frame, text="Pause", command=start_pause)
+button2_4 = tk.Button(button_frame, text="ID", command=language)
 button2_1.grid(row=0, column=0, sticky='w')
 button2_2.grid(row=0, column=1, sticky='w')
 button2_3.grid(row=0, column=2, sticky='w')
+button2_4.grid(row=0, column=3, sticky='w')
+
+# frame 3 content
+label3 = tk.Label(frame3, text="The program is currently paused. Click the button below to continue.",
+                  wraplength=320,
+                  justify=tk.LEFT
+                  )
+label3.pack()
+
+button3 = tk.Button(frame3, text="Here!", command=stop_pause)
+button3.pack()
 
 # do NOT delete
 show_frame(frame1)
