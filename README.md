@@ -3,7 +3,7 @@ pretty useless app i created with python and tkinter on my free time. i figured 
 using it is pretty straightforward, just click the start button and you're good to go.
 
 ## Installation
-1. download the app [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.4)
+1. download the app [here](https://github.com/Kevinistic/cdidtjgt/releases/tag/v1.5)
 2. extract it somewhere
 3. voila! you're done. open the .exe program to use.
 otherwise, create a shortcut to the .exe file to your desktop for quick access ig
@@ -18,7 +18,8 @@ if you're a brainlet who needs guidance;
 5. p.s. the 'restart' button resets all the datas inside the program. only press it when you know what you're doing.
 
 ## Plans
-- pause feature
+- ~~pause feature~~
+- new buttons, possibly new gui
 - new gui cuz tkinter is hella outdated man :skull:
 - mac support soon (?)
 
