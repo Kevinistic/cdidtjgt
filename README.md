@@ -6,7 +6,6 @@ using it is pretty straightforward, just click the start button and you're good 
 1. download the app [here](https://github.com/Kevinistic/cdidtjgt/releases/)
 2. save it somewhere, heck, create a shortcut for easy access
 3. voila! you're done. open the .exe program to use.
-otherwise, create a shortcut to the .exe file to your desktop for quick access ig
 
 ## Guidance
 if you're a brainlet who needs guidance;
