@@ -3,8 +3,8 @@ pretty useless app i created with python and tkinter on my free time. i figured 
 using it is pretty straightforward, just click the start button and you're good to go.
 
 ## Installation
-1. download the app [here](https://github.com/Kevinistic/cdidtjgt/releases)
-2. extract it somewhere
+1. download the app [here](https://github.com/Kevinistic/cdidtjgt/releases/)
+2. save it somewhere, heck, create a shortcut for easy access
 3. voila! you're done. open the .exe program to use.
 otherwise, create a shortcut to the .exe file to your desktop for quick access ig
 
