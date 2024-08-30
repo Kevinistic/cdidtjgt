@@ -146,7 +146,7 @@ def go():
 def reset():
     global d
     for key in d.keys():
-        if key in ["flag_time", "runtime_seconds", "lang", "flag_pause"]:
+        if key in ["flag_time", "runtime_seconds", "lang", "flag_pause", "time_recent"]:
             continue
         d[key] = 0
     label2_22.config(text=f"{d['money_memory']}")
