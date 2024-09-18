@@ -54,34 +54,28 @@ def ms(n): # float to minutes and seconds
     m = int(n // 60) # minutes
     s = math.floor(n % 60)
     return f"{m}m {s}s"
-
 def hms(n): # float to hours, minutes and seconds
     h = int(n // 3600) # hours
     rs = n % 3600
     m = int(rs // 60)
     s = round(rs % 60)
     return f"{h}h {m}m {s}s"
-
 def start_pause():
     global d
     d["time_pause_start"] = time.time()
     d["flag_pause"] = True
     show_frame(frame3)
-
 def stop_pause():
     global d
     d["time_pause_stop"] = time.time()
     d["time_pause_difference"] = d["time_pause_stop"] - d["time_pause_start"]
     d["time_pause_total"] += d["time_pause_difference"]
     show_frame(frame2)
-
 def invalidentry(n):
     n.config(bg="red")
     root.after(100, lambda: n.config(bg="white"))
-
 def show_frame(frame): # switcharoo!
     frame.tkraise()
-
 def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION UNLESS YOU KNWO WHAT YOURE DOING!!!!!!!!!!
     global d
     entry_string = entry2.get()
@@ -129,20 +123,16 @@ def process_input(): # PLEASE DO NOT FUCK AROUND WITH THIS FUNCTION UNLESS YOU K
     except ValueError:
         label2_32.config(text=f"{d['result_memory']}")
         invalidentry(entry2)
-
 def is_close(a, b, tol=1e-9):
     return abs(a - b) < tol
-
 def runtimef():
     global d
     d["runtime_seconds"] += 1
     label2_62.config(text=hms(d["runtime_seconds"]))
     root.after(999, runtimef)
-
 def go():
     runtimef()
     show_frame(frame2)
-
 def reset():
     global d
     for key in d.keys():
@@ -153,13 +143,16 @@ def reset():
     label2_32.config(text=f"{d['result_memory']}")
     label2_42.config(text=f"{round(d['rate_hour'], 2)}")
     label2_52.config(text=f"{ms(d['time_difference'])}")
-
 def language():
     global d
     lang_code = "ID" if d["lang"] else "EN"
     for key, sentence in language_dict[lang_code].items():
         globals()[key].config(text=sentence)
     d["lang"] = not d["lang"]
+def on_focus_in(n): # opacity change when not in focus
+    root.wm_attributes("-alpha", 1)
+def on_focus_out(n):
+    root.wm_attributes("-alpha", 0.7)
 
 # main shit
 root = tk.Tk()
@@ -169,6 +162,9 @@ root.resizable(False, False) # nuh uh
 root.attributes("-topmost", True) # always on top
 root.rowconfigure(0, weight=1) # snap to geometry()
 root.columnconfigure(0, weight=1)
+root.wm_attributes("-alpha", 1)
+root.bind("<FocusIn>", on_focus_in)
+root.bind("<FocusOut>", on_focus_out)
 frame1 = tk.Frame(root) # frames for gui
 frame2 = tk.Frame(root)
 frame3 = tk.Frame(root)
