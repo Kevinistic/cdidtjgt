@@ -70,6 +70,7 @@ def invalid_entry2():
     entry2.delete(0, tk.END)  # clear entry
     entry2.insert(0, "Invalid input!")  # insert
     entry2.config(state='readonly')  # temp lock
+    button2_1.config(state="disabled")
     button2_2.config(state="disabled")
     button2_3.config(state="disabled")
     root.after(500, restore_entry)
@@ -77,6 +78,7 @@ def restore_entry():
     entry2.config(state='normal')  # unlock
     entry2.delete(0, tk.END)  # clear entry
     entry2.insert(0, d["entry2_input"])
+    button2_1.config(state="normal")
     button2_2.config(state="normal")
     button2_3.config(state="normal")
 def show_frame(frame): # switcharoo!
